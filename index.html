@@ -1,152 +1,451 @@
+# Podiatry Blog Static Site
+
+Use these files in your GitHub repository so your website has:
+- a homepage
+- a separate blog page for plantar fasciitis
+- a separate blog page for warts
+- a separate blog page for wounds
+
+---
+
+## 1) Replace your current `index.html` with this
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Tenzin Lungkara, D.Ch.</title>
-
-<style>
-body {
-  font-family: Arial, sans-serif;
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
-  line-height: 1.6;
-  color: #000;
-}
-
-header {
-  border-bottom: 1px solid #ccc;
-  margin-bottom: 20px;
-}
-
-nav {
-  margin-top: 10px;
-}
-
-nav a {
-  margin-right: 15px;
-  text-decoration: none;
-  color: black;
-  font-size: 14px;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-.section {
-  margin-top: 40px;
-  border-top: 1px solid #ccc;
-  padding-top: 20px;
-}
-
-.post {
-  border: 1px solid #ccc;
-  padding: 15px;
-  margin-top: 15px;
-}
-
-.sidebar {
-  border: 1px solid #ccc;
-  padding: 15px;
-  margin-top: 20px;
-  background: #f9f9f9;
-}
-
-.container {
-  display: flex;
-  gap: 30px;
-}
-
-.main {
-  flex: 2;
-}
-
-.side {
-  flex: 1;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tenzin Lungkara, D.Ch.</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #111;
+      background: #fff;
+    }
+    header {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 15px;
+      margin-bottom: 25px;
+    }
+    h1 {
+      margin-bottom: 5px;
+    }
+    nav {
+      margin-top: 12px;
+    }
+    nav a {
+      margin-right: 18px;
+      color: #111;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+    }
+    .section {
+      border-top: 1px solid #ccc;
+      padding-top: 20px;
+      margin-top: 35px;
+    }
+    .post {
+      border: 1px solid #ccc;
+      padding: 16px;
+      margin-top: 16px;
+    }
+    .post h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+    .post p {
+      margin: 8px 0;
+    }
+    .read-more {
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .sidebar-box {
+      border: 1px solid #ccc;
+      padding: 16px;
+      margin-top: 35px;
+      background: #fafafa;
+    }
+    footer {
+      border-top: 1px solid #ccc;
+      margin-top: 50px;
+      padding-top: 16px;
+      font-size: 14px;
+      color: #555;
+    }
+    @media (max-width: 800px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <header>
+    <h1>Tenzin Lungkara, D.Ch.</h1>
+    <p>Simple podiatric articles, study notes, and research summaries.</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#about">About</a>
+      <a href="#topics">Topics</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<header>
-  <h1>Tenzin Lungkara, D.Ch.</h1>
-  <p>Simple podiatric articles, study notes, and research summaries.</p>
+  <div class="layout">
+    <main>
+      <section>
+        <h2>Welcome</h2>
+        <p>
+          This website is a simple educational resource focused on podiatric topics,
+          research summaries, and practical clinical information.
+        </p>
+      </section>
 
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#blog">Blog</a>
-    <a href="#research">Research</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+      <section class="section">
+        <h2>Recent Posts</h2>
 
-<div class="container">
+        <div class="post">
+          <h3>Plantar Fasciitis</h3>
+          <p><i>April 2026</i></p>
+          <p>
+            A simple overview of plantar fasciitis, common contributing factors,
+            and key treatment approaches.
+          </p>
+          <a class="read-more" href="posts/plantar-fasciitis.html">Read more</a>
+        </div>
 
-<div class="main">
+        <div class="post">
+          <h3>Warts</h3>
+          <p><i>April 2026</i></p>
+          <p>
+            A basic review of plantar warts, clinical features,
+            and common treatment approaches.
+          </p>
+          <a class="read-more" href="posts/warts.html">Read more</a>
+        </div>
 
-<section id="home" class="section">
-  <h2>Welcome</h2>
-  <p>This site shares simple, practical summaries of podiatric research and clinical topics.</p>
-</section>
+        <div class="post">
+          <h3>Wounds</h3>
+          <p><i>April 2026</i></p>
+          <p>
+            A brief introduction to foot wounds, risk factors,
+            and principles of wound management.
+          </p>
+          <a class="read-more" href="posts/wounds.html">Read more</a>
+        </div>
+      </section>
 
-<section id="blog" class="section">
-  <h2>Recent Posts</h2>
+      <section id="about" class="section">
+        <h2>About</h2>
+        <p>
+          I am a chiropodist with an interest in podiatric research, education,
+          and practical evidence-based care.
+        </p>
+      </section>
 
-  <div class="post">
-    <h3>Plantar Fasciitis: Key Research Updates</h3>
-    <p><i>April 2026</i></p>
-    <p>Overview of load management, stretching, and shockwave therapy.</p>
+      <section id="contact" class="section">
+        <h2>Contact</h2>
+        <p>Add your professional email here.</p>
+      </section>
+    </main>
+
+    <aside>
+      <div id="topics" class="sidebar-box">
+        <h3>Topics</h3>
+        <p>Plantar Fasciitis</p>
+        <p>Warts</p>
+        <p>Wounds</p>
+        <p>Biomechanics</p>
+        <p>Orthotics</p>
+      </div>
+
+      <div class="sidebar-box">
+        <h3>Purpose</h3>
+        <p>
+          A very basic website focused on useful podiatric information rather than flashy design.
+        </p>
+      </div>
+    </aside>
   </div>
 
-  <div class="post">
-    <h3>Orthotics: What the Evidence Says</h3>
-    <p><i>March 2026</i></p>
-    <p>When orthotics are effective and when expectations should be adjusted.</p>
-  </div>
-
-</section>
-
-<section id="research" class="section">
-  <h2>Research Topics</h2>
-  <ul>
-    <li>Biomechanics</li>
-    <li>Orthotics</li>
-    <li>Sports injuries</li>
-    <li>Nail surgery</li>
-    <li>Wound care</li>
-  </ul>
-</section>
-
-<section id="about" class="section">
-  <h2>About</h2>
-  <p>I am a chiropodist focused on research, education, and evidence-based foot care.</p>
-</section>
-
-<section id="contact" class="section">
-  <h2>Contact</h2>
-  <p>Add your professional email here.</p>
-</section>
-
-</div>
-
-<div class="side">
-
-<div class="sidebar">
-  <h3>Purpose</h3>
-  <p>Simple, no-frills educational site focused on podiatry content.</p>
-</div>
-
-<div class="sidebar">
-  <h3>Topics</h3>
-  <p>Biomechanics<br>Orthotics<br>Wound Care<br>Surgery</p>
-</div>
-
-</div>
-
-</div>
-
+  <footer>
+    © 2026 Tenzin Lungkara. All rights reserved.
+  </footer>
 </body>
 </html>
+```
+
+---
+
+## 2) Create a folder in your repo called `posts`
+
+Inside that folder, create these 3 files:
+- `plantar-fasciitis.html`
+- `warts.html`
+- `wounds.html`
+
+---
+
+## 3) Put this in `posts/plantar-fasciitis.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plantar Fasciitis</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.7;
+      color: #111;
+      background: #fff;
+    }
+    header {
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+    }
+    a {
+      color: #111;
+    }
+    .meta {
+      color: #666;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Plantar Fasciitis</h1>
+    <p class="meta">April 2026</p>
+    <p><a href="../index.html">← Back to Home</a></p>
+  </header>
+
+  <p>
+    Plantar fasciitis is one of the most common causes of heel pain. It often presents
+    as pain near the bottom of the heel, especially with the first few steps in the morning
+    or after periods of rest.
+  </p>
+
+  <h2>Common Contributing Factors</h2>
+  <p>
+    Contributing factors may include increased standing or walking, training changes,
+    calf tightness, reduced ankle dorsiflexion, higher body weight, and footwear that
+    does not provide adequate support for the individual.
+  </p>
+
+  <h2>General Treatment Approaches</h2>
+  <p>
+    Treatment often includes activity modification, stretching, strengthening,
+    footwear advice, taping, orthotic therapy when appropriate, and progressive loading strategies.
+    Some cases may also involve shockwave therapy or other interventions depending on severity and duration.
+  </p>
+
+  <h2>Clinical Note</h2>
+  <p>
+    It is important to consider alternative diagnoses when symptoms are atypical,
+    persistent, or associated with neurological features.
+  </p>
+</body>
+</html>
+```
+
+---
+
+## 4) Put this in `posts/warts.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warts</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.7;
+      color: #111;
+      background: #fff;
+    }
+    header {
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+    }
+    a {
+      color: #111;
+    }
+    .meta {
+      color: #666;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Warts</h1>
+    <p class="meta">April 2026</p>
+    <p><a href="../index.html">← Back to Home</a></p>
+  </header>
+
+  <p>
+    Plantar warts are skin lesions caused by human papillomavirus. They often occur
+    on weight-bearing areas of the foot and may present with pinpoint bleeding,
+    interruption of skin lines, and pain with side-to-side compression.
+  </p>
+
+  <h2>Clinical Features</h2>
+  <p>
+    Warts may appear as rough hyperkeratotic lesions and can sometimes be mistaken for calluses.
+    Careful clinical assessment is important in differentiating these lesions.
+  </p>
+
+  <h2>Treatment Options</h2>
+  <p>
+    Treatment options may include salicylic acid, cantharidin-based treatments,
+    debridement, cryotherapy, microwave therapy, and other approaches depending on the case.
+  </p>
+
+  <h2>Clinical Note</h2>
+  <p>
+    Persistent or atypical lesions may require further investigation or referral,
+    especially if the diagnosis is uncertain or if standard treatment has failed.
+  </p>
+</body>
+</html>
+```
+
+---
+
+## 5) Put this in `posts/wounds.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wounds</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.7;
+      color: #111;
+      background: #fff;
+    }
+    header {
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+    }
+    a {
+      color: #111;
+    }
+    .meta {
+      color: #666;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Wounds</h1>
+    <p class="meta">April 2026</p>
+    <p><a href="../index.html">← Back to Home</a></p>
+  </header>
+
+  <p>
+    Foot wounds can arise from pressure, friction, trauma, vascular compromise,
+    neuropathy, or systemic disease. Proper assessment is essential to determine healing potential and risk.
+  </p>
+
+  <h2>Important Assessment Factors</h2>
+  <p>
+    Assessment may include wound size and depth, tissue type, drainage,
+    signs of infection, vascular status, sensation, pressure areas, and overall patient health.
+  </p>
+
+  <h2>General Management Principles</h2>
+  <p>
+    Management may involve pressure offloading, appropriate dressings,
+    debridement when indicated, infection control, vascular assessment,
+    and referral when higher-risk findings are present.
+  </p>
+
+  <h2>Clinical Note</h2>
+  <p>
+    Wounds in high-risk patients should be monitored closely, particularly when there is
+    reduced sensation, poor circulation, or delayed healing.
+  </p>
+</body>
+</html>
+```
+
+---
+
+## 6) How to add future blog posts
+
+For every new blog post:
+
+1. Create a new file inside the `posts` folder
+2. Name it something like `achilles-tendinopathy.html`
+3. Copy one of the post page templates above
+4. Change the title and content
+5. Add a new post card to `index.html` that links to that file
+
+Example homepage post card:
+
+```html
+<div class="post">
+  <h3>Achilles Tendinopathy</h3>
+  <p><i>April 2026</i></p>
+  <p>A short overview of presentation, loading principles, and management options.</p>
+  <a class="read-more" href="posts/achilles-tendinopathy.html">Read more</a>
+</div>
+```
+
+---
+
+## 7) What to do in GitHub
+
+- Open your repo
+- Edit `index.html` and replace it with the new homepage code
+- Create a folder called `posts`
+- Inside `posts`, create the 3 files above
+- Commit changes each time
+- Refresh your live site after 10 to 30 seconds
+
+---
+
+## 8) Easy editing rule
+
+- Edit `index.html` to change the homepage
+- Edit files inside `posts` to change the full blog articles
+
+That’s your whole blog system.
